@@ -12,11 +12,24 @@ namespace Agenda
 {
     public partial class InserirAgenda : Form
     {
+        private List<Profissional> profissionais;
         public InserirAgenda()
         {
             InitializeComponent();
         }
+        public InserirAgenda(List<Profissional> profissionais)
+        {
+            InitializeComponent();
+            
+            this.profissionais = profissionais;
 
+            comboBox1.Items.Clear();
+
+            foreach (var profissional in profissionais)
+            {
+                comboBox1.Items.Add(profissional.Nome);
+            }
+        }
         private void InserirAgenda_Load(object sender, EventArgs e)
         {
 
@@ -38,6 +51,10 @@ namespace Agenda
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -57,8 +57,10 @@ namespace Agenda.Enum
     public enum Profissao
     {
         CABELEREIRO = 1,
-        DESIGNER_SOMBRANCELHA = 2,
+        MAQUIADOR = 2,
         MANICURE = 3,
+        DESIGNER_SOMBRANCELHA = 4,
+        VISAGISTA = 5,
     }
     public enum HorarioTrabalho
     {

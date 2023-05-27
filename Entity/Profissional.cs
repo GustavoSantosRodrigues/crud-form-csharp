@@ -11,13 +11,12 @@ namespace Agenda
     public class Profissional : Entidade
     {
         public string Nome { get; set; }
-        public Profissao Profissao { get; set; }
+        public Enum.Profissao Profissao { get; set; }
         public HorarioTrabalho Horario { get; set; }
         public DiasTrabalho Dias { get; set; }
-        
         public Profissional() {}
         
-        public Profissional(int id, string nome, Profissao profissao, HorarioTrabalho horario, DiasTrabalho dias)
+        public Profissional(int id, string nome, Enum.Profissao profissao, HorarioTrabalho horario, DiasTrabalho dias)
         {
             Id = id;
             Nome = nome;
