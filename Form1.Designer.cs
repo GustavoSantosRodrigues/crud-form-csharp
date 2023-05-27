@@ -42,7 +42,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -76,9 +75,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label3.Location = new System.Drawing.Point(284, 368);
+            this.label3.Location = new System.Drawing.Point(245, 368);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 39);
+            this.label3.Size = new System.Drawing.Size(149, 38);
             this.label3.TabIndex = 3;
             this.label3.Text = "Cabelos";
             // 
@@ -87,7 +86,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label4.Location = new System.Drawing.Point(582, 370);
+            this.label4.Location = new System.Drawing.Point(550, 368);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(181, 37);
             this.label4.TabIndex = 5;
@@ -98,7 +97,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label5.Location = new System.Drawing.Point(945, 370);
+            this.label5.Location = new System.Drawing.Point(875, 370);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 37);
             this.label5.TabIndex = 7;
@@ -121,7 +120,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label7.Location = new System.Drawing.Point(284, 654);
+            this.label7.Location = new System.Drawing.Point(245, 654);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 37);
             this.label7.TabIndex = 11;
@@ -133,7 +132,7 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Location = new System.Drawing.Point(882, 422);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(217, 202);
+            this.button6.Size = new System.Drawing.Size(217, 209);
             this.button6.TabIndex = 12;
             this.button6.UseVisualStyleBackColor = true;
             // 
@@ -143,7 +142,7 @@
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Location = new System.Drawing.Point(252, 422);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(203, 215);
+            this.button5.Size = new System.Drawing.Size(203, 209);
             this.button5.TabIndex = 10;
             this.button5.UseVisualStyleBackColor = true;
             // 
@@ -151,9 +150,9 @@
             // 
             this.button4.BackgroundImage = global::Agenda.Properties.Resources.designer_de_sobrancelha;
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(557, 422);
+            this.button4.Location = new System.Drawing.Point(557, 416);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(203, 215);
+            this.button4.Size = new System.Drawing.Size(207, 215);
             this.button4.TabIndex = 8;
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -187,50 +186,41 @@
             this.button1.Size = new System.Drawing.Size(203, 207);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label8.Location = new System.Drawing.Point(908, 654);
+            this.label8.Location = new System.Drawing.Point(875, 654);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(177, 37);
             this.label8.TabIndex = 13;
             this.label8.Text = "Visagismo";
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Violet;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button7.Location = new System.Drawing.Point(252, 738);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(183, 45);
-            this.button7.TabIndex = 14;
-            this.button7.Text = "Cadastrar Profissional";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.Violet;
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Location = new System.Drawing.Point(882, 738);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(784, 731);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(217, 45);
+            this.button8.Size = new System.Drawing.Size(315, 45);
             this.button8.TabIndex = 15;
-            this.button8.Text = "Consultar Profissional";
+            this.button8.Text = "Consultar Profissionais";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.Violet;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(561, 738);
+            this.button9.Location = new System.Drawing.Point(252, 731);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(203, 45);
+            this.button9.Size = new System.Drawing.Size(252, 45);
             this.button9.TabIndex = 16;
             this.button9.Text = "Consultar Agenda";
             this.button9.UseVisualStyleBackColor = false;
@@ -243,7 +233,6 @@
             this.ClientSize = new System.Drawing.Size(1379, 795);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label7);
@@ -281,7 +270,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
     }

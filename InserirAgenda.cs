@@ -16,5 +16,20 @@ namespace Agenda
         {
             InitializeComponent();
         }
+
+        private void InserirAgenda_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
