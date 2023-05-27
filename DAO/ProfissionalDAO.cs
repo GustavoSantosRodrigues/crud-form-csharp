@@ -47,7 +47,7 @@ namespace Agenda.DAO
 
                             profissional.Id = id;
                             profissional.Nome = nome;
-                            profissional.Horario = HorarioTrabalho;
+                            
                             profissionais.Add(profissional);
 
                             Console.WriteLine($"ID: {id}, Nome: {nome}");
