@@ -94,6 +94,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultarAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarAgenda.Designer.cs">
+      <DependentUpon>ConsultarAgenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\DatabaseConnection.cs" />
     <Compile Include="DAO\ProfissionalDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
@@ -120,6 +126,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConsultarAgenda.resx">
+      <DependentUpon>ConsultarAgenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

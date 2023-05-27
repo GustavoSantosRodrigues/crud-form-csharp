@@ -37,8 +37,8 @@ namespace Agenda
 
         private void button9_Click(object sender, EventArgs e)
         {
-            InserirProfissional inserirProfissional = new InserirProfissional();
-            inserirProfissional.Show();
+            ConsultarAgenda consultarAgenda = new ConsultarAgenda();
+            consultarAgenda.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -50,6 +50,12 @@ namespace Agenda
         {
             InserirAgenda inserirAgenda = new InserirAgenda();
             inserirAgenda.Show();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            InserirProfissional inserirProfissional = new InserirProfissional();
+            inserirProfissional.Show();
         }
     }
 }
