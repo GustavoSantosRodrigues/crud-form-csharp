@@ -20,7 +20,6 @@ namespace Agenda
             InitializeComponent();
         }
 
-<<<<<<< Updated upstream
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -38,40 +37,6 @@ namespace Agenda
 
         private void button9_Click(object sender, EventArgs e)
         {
-=======
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Profissional profissional = new Profissional();
-
-            profissional.Id = 0;
-            profissional.Nome = "Mateus";
-            profissional.Horario = HorarioTrabalho.INICIO_08;
-            profissional.Dias = DiasTrabalho.SEG_SEX;
-
-            ProfissionalDAO profissionalDAO = new ProfissionalDAO();
-            
-            try
-            {
-                List<Entidade> entidades = profissionalDAO.BuscarTodos();
-
-                foreach (var entidade in entidades)
-                {
-                    Profissional pf = (Profissional)entidade;
-                    MessageBox.Show(pf.Id+pf.Nome);
-                }
-
-                //MessageBox.Show("Profissionais buscados com sucesso!");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Ocorreu um erro inesperado e não foi possivel salvar o profissional.");
-
-            }
-            finally
-            {
-            //clearForm();
-            }
->>>>>>> Stashed changes
 
         }
     }
