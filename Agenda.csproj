@@ -94,15 +94,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlterarDadosAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterarDadosAgendamento.Designer.cs">
+      <DependentUpon>AlterarDadosAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlterarDadosProfissional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterarDadosProfissional.Designer.cs">
+      <DependentUpon>AlterarDadosProfissional.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultarAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultarAgenda.Designer.cs">
       <DependentUpon>ConsultarAgenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarProfissionais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarProfissionais.Designer.cs">
+      <DependentUpon>ConsultarProfissionais.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\DatabaseConnection.cs" />
     <Compile Include="DAO\ProfissionalDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
+    <Compile Include="DeletarAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletarAgenda.Designer.cs">
+      <DependentUpon>DeletarAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeletarDadosProfissional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletarDadosProfissional.Designer.cs">
+      <DependentUpon>DeletarDadosProfissional.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Entidade.cs" />
     <Compile Include="Entity\Profissional.cs" />
     <Compile Include="Enum\Enums.cs" />
@@ -126,8 +156,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlterarDadosAgendamento.resx">
+      <DependentUpon>AlterarDadosAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlterarDadosProfissional.resx">
+      <DependentUpon>AlterarDadosProfissional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultarAgenda.resx">
       <DependentUpon>ConsultarAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarProfissionais.resx">
+      <DependentUpon>ConsultarProfissionais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletarAgenda.resx">
+      <DependentUpon>DeletarAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletarDadosProfissional.resx">
+      <DependentUpon>DeletarDadosProfissional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
