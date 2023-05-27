@@ -208,7 +208,19 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+
+        public InserirAgenda(System.Windows.Forms.Label label2)
+        {
+            this.label2 = label2;
+        }
+
         private System.Windows.Forms.TextBox textBox1;
+
+        public InserirAgenda(System.Windows.Forms.TextBox textBox1)
+        {
+            this.textBox1 = textBox1;
+        }
+
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
