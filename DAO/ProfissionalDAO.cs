@@ -12,7 +12,7 @@ namespace Agenda.DAO
 {
     internal class ProfissionalDAO : IDAO
     {
-        public Entidade Alterar(Entidade entidade)
+        public Boolean Alterar(Entidade entidade)
         {
             throw new NotImplementedException();
         }
@@ -71,7 +71,7 @@ namespace Agenda.DAO
             throw new NotImplementedException();
         }
 
-        public Entidade Salvar(Entidade entidade)
+        public Boolean Salvar(Entidade entidade)
         {
 
             

@@ -118,6 +118,7 @@
     <Compile Include="ConsultarProfissionais.Designer.cs">
       <DependentUpon>ConsultarProfissionais.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\AgendamentoDAO.cs" />
     <Compile Include="DAO\DatabaseConnection.cs" />
     <Compile Include="DAO\ProfissionalDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
@@ -133,6 +134,8 @@
     <Compile Include="DeletarDadosProfissional.Designer.cs">
       <DependentUpon>DeletarDadosProfissional.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Agendamento.cs" />
+    <Compile Include="Entity\Cliente.cs" />
     <Compile Include="Entity\Entidade.cs" />
     <Compile Include="Entity\Profissional.cs" />
     <Compile Include="Enum\Enums.cs" />
@@ -156,6 +159,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Utils.cs" />
     <EmbeddedResource Include="AlterarDadosAgendamento.resx">
       <DependentUpon>AlterarDadosAgendamento.cs</DependentUpon>
     </EmbeddedResource>
