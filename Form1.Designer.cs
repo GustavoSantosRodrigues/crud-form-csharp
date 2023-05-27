@@ -230,7 +230,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< Updated upstream
             this.ClientSize = new System.Drawing.Size(1379, 795);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -248,11 +247,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-=======
-            this.ClientSize = new System.Drawing.Size(743, 460);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
->>>>>>> Stashed changes
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -262,7 +256,6 @@
 
         #endregion
 
-<<<<<<< Updated upstream
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
@@ -279,9 +272,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-=======
-        private System.Windows.Forms.Button button1;
->>>>>>> Stashed changes
     }
 }
 

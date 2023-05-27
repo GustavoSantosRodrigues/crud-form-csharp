@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Agenda.DAO;
-using Agenda.Entity;
-using Agenda.Enum;
+// using Agenda.DAO;
+// using Agenda.Entity;
+// using Agenda.Enum;
 
 namespace Agenda
 {
