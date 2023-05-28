@@ -1,6 +1,6 @@
 ﻿namespace Agenda
 {
-    partial class ConsultarProfissionais
+    partial class ConsultarAgendamentos
     {
         /// <summary>
         /// Required designer variable.
@@ -44,10 +44,10 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(920, 160);
+            this.panel2.Location = new System.Drawing.Point(932, 145);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 490);
-            this.panel2.TabIndex = 9;
+            this.panel2.TabIndex = 18;
             // 
             // button3
             // 
@@ -106,30 +106,32 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(165, 61);
+            this.label1.Location = new System.Drawing.Point(177, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(521, 46);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Profissionais Registrados";
+            this.label1.Size = new System.Drawing.Size(562, 46);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Agendamentos Registrados";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(70, 160);
+            this.panel1.Location = new System.Drawing.Point(82, 145);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 490);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 16;
             // 
-            // ConsultarProfissionais
+            // ConsultarAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 685);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ConsultarProfissionais";
-            this.Text = "ConsultarProfissionais";
+            this.Name = "ConsultarAgenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ConsultarAgenda";
+            this.Load += new System.EventHandler(this.ConsultarAgenda_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -140,11 +142,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

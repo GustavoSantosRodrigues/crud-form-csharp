@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Agenda
 {
-    public partial class AlterarDadosAgendamento : Form
+    public partial class AlterarAgendamento : Form
     {
-        public AlterarDadosAgendamento()
+        public AlterarAgendamento()
         {
             InitializeComponent();
         }

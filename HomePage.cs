@@ -41,7 +41,7 @@ namespace Agenda
 
             this.Hide();
 
-            InserirAgenda inserirAgenda = new InserirAgenda(profissionais);
+            InserirAgendamento inserirAgenda = new InserirAgendamento(profissionais);
             inserirAgenda.ReferenceHomePage = this;
             
             inserirAgenda.Show();
@@ -79,13 +79,16 @@ namespace Agenda
         // Consultar Profissionais
         private void button8_Click(object sender, EventArgs e)
         {
-            ConsultarProfissionais consultarProfissionais = new ConsultarProfissionais();
-            consultarProfissionais.Show();
+
+            InserirProfissional profissional = new InserirProfissional();   
+            profissional.Show();
+           // ConsultarProfissionais consultarProfissionais = new ConsultarProfissionais();
+            //consultarProfissionais.Show();
         }
         // Consultar Agenda
         private void button9_Click(object sender, EventArgs e)
         {
-            ConsultarAgenda consultarAgenda = new ConsultarAgenda();
+            ConsultarAgendamentos consultarAgenda = new ConsultarAgendamentos();
             consultarAgenda.Show();
         }
     }

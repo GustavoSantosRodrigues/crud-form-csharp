@@ -1,6 +1,6 @@
 ﻿namespace Agenda
 {
-    partial class InserirAgenda
+    partial class InserirAgendamento
     {
         /// <summary>
         /// Required designer variable.
@@ -49,12 +49,12 @@
             // 
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(440, 45);
+            this.label1.Location = new System.Drawing.Point(381, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 40);
+            this.label1.Size = new System.Drawing.Size(500, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Formulário de Agenda";
+            this.label1.Text = "Formulário de Agendamento";
             // 
             // label2
             // 
@@ -103,14 +103,14 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(560, 110);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(280, 32);
+            this.comboBox1.Size = new System.Drawing.Size(280, 30);
             this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "  Selecione o profissional";
+            this.comboBox1.Text = " Selecione um profissional...";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
@@ -176,7 +176,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(280, 32);
             this.comboBox2.TabIndex = 6;
-            this.comboBox2.Text = "  Selecione o horário";
+            this.comboBox2.Text = " Selecione um horário...";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button2
@@ -215,7 +215,7 @@
             this.panel1.TabIndex = 18;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // InserirAgenda
+            // InserirAgendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -223,7 +223,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "InserirAgenda";
+            this.Name = "InserirAgendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InserirAgenda";
             this.Load += new System.EventHandler(this.InserirAgenda_Load);
@@ -238,14 +238,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
 
-        public InserirAgenda(System.Windows.Forms.Label label2)
+        public InserirAgendamento(System.Windows.Forms.Label label2)
         {
             this.label2 = label2;
         }
 
         private System.Windows.Forms.TextBox textBox1;
 
-        public InserirAgenda(System.Windows.Forms.TextBox textBox1)
+        public InserirAgendamento(System.Windows.Forms.TextBox textBox1)
         {
             this.textBox1 = textBox1;
         }

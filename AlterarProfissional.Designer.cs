@@ -1,6 +1,6 @@
 ﻿namespace Agenda
 {
-    partial class AlterarDadosProfissional
+    partial class AlterarProfissional
     {
         /// <summary>
         /// Required designer variable.

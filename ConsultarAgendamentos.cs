@@ -14,9 +14,9 @@ using static System.Windows.Forms.LinkLabel;
 
 namespace Agenda
 {
-    public partial class ConsultarAgenda : Form
+    public partial class ConsultarAgendamentos : Form
     {
-        public ConsultarAgenda()
+        public ConsultarAgendamentos()
         {
             InitializeComponent();
             ConstruirTabela();
@@ -69,18 +69,13 @@ namespace Agenda
         {
 
         }
-        // Alterar
+
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
-        // Excluir
+
         private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }

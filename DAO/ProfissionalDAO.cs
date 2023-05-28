@@ -120,5 +120,13 @@ namespace Agenda.DAO
                 throw new NotImplementedException();
             }
         }
+
+        internal Profissional BuscarPorNomeEProfissao(string nome, int idProfissao)
+        {
+
+            // select * from profissional where nome like '%{nome}' and id_profissao = {idProfissao}
+
+            throw new NotImplementedException();
+        }
     }
 }

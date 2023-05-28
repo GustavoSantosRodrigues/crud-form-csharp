@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Agenda
 {
-    public partial class DeletarDadosProfissional : Form
+    public partial class DeletarProfissional : Form
     {
-        public DeletarDadosProfissional()
+        public DeletarProfissional()
         {
             InitializeComponent();
         }

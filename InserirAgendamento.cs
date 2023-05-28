@@ -16,15 +16,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Agenda
 {
-    public partial class InserirAgenda : Form
+    public partial class InserirAgendamento : Form
     {
         private List<Profissional> profissionais;
         public Form ReferenceHomePage { get; set; }
-        public InserirAgenda()
+        public InserirAgendamento()
         {
             InitializeComponent();
         }
-        public InserirAgenda(List<Profissional> profissionais)
+        public InserirAgendamento(List<Profissional> profissionais)
         {
             InitializeComponent();
             
@@ -64,22 +64,22 @@ namespace Agenda
                 MessageBox.Show("O nome do cliente não pode ser vázio.");
                 return;
             }
-            else if (String.IsNullOrEmpty(telefone.Replace("(","").Replace(")","").Replace("-","").Trim()))
+            if (String.IsNullOrEmpty(telefone.Replace("(","").Replace(")","").Replace("-","").Trim()))
             {
                 MessageBox.Show("O telefone do cliente não pode ser vázio.");
                 return;
             }
-            else if (String.IsNullOrEmpty(nomeProfissional))
+            if (String.IsNullOrEmpty(nomeProfissional))
             {
                 MessageBox.Show("É preciso selecionar um profissional.");
                 return;
             }
-            else if (data == null)
+            if (data == null)
             {
                 MessageBox.Show("É preciso selecionar uma data.");
                 return;
             }
-            else if (String.IsNullOrEmpty(hora))
+            if (String.IsNullOrEmpty(hora))
             {
                 MessageBox.Show("É preciso selecionar um horário.");
                 return;

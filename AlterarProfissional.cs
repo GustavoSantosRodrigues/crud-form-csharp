@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace Agenda
 {
-    public partial class DeletarAgenda : Form
+    public partial class AlterarProfissional : Form
     {
-        public DeletarAgenda()
+        public AlterarProfissional()
         {
             InitializeComponent();
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
 
         }
