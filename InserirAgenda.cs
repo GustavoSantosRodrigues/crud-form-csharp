@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Agenda.DAO;
 using Agenda.Entity;
+using Agenda.Utils;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Agenda
@@ -40,7 +41,7 @@ namespace Agenda
             dateTimePicker1.MinDate = DateTime.Today.AddDays(1);
             dateTimePicker1.MaxDate = new DateTime(2023, 12, 31);
 
-            comboBox2.Items.AddRange(Utils.Getters.GetArrayHorarios());
+            comboBox2.Items.AddRange(Getters.GetArrayHorarios());
         }
         private string RemoverEspacos(string texto)
         {
@@ -155,11 +156,18 @@ namespace Agenda
             if (isSalvo)
             {
                 MessageBox.Show("Agendamento salvo com sucesso.");
+                //redirect
             }
             else
             {
                 MessageBox.Show("Erro ao se connectar com o banco. Não foi possível salvar o agendamento.");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ReferenceHomePage.Show();
         }
 
         private void InserirAgenda_Load(object sender, EventArgs e)
@@ -181,10 +189,14 @@ namespace Agenda
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            this.Close();
-            ReferenceHomePage.Show();
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

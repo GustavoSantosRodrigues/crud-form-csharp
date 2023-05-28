@@ -16,7 +16,6 @@ namespace Agenda
 {
     public partial class ConsultarAgenda : Form
     {
-        private TableLayoutPanel tableLayoutPanel1;
         public ConsultarAgenda()
         {
             InitializeComponent();
@@ -30,7 +29,7 @@ namespace Agenda
 
             panel1.Controls.Clear();
 
-            tableLayoutPanel1 = new TableLayoutPanel();
+            TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.ColumnCount = 6;
             tableLayoutPanel1.AutoScroll = true;

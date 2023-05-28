@@ -22,7 +22,6 @@ namespace Agenda
 
             ConstruirTabela();
         }
-
         private void ConstruirTabela()
         {
             ProfissionalDAO profissionalDAO = new ProfissionalDAO();
@@ -63,19 +62,20 @@ namespace Agenda
 
             panel1.Controls.Add(tableLayoutPanel1);
         }
+        // Button Salvar
         private void button1_Click(object sender, EventArgs e)
         {
-
+            // Salvar Profissional
         }
-
+        // Button Alterar
         private void button2_Click(object sender, EventArgs e)
         {
-
+            // Alterar Profissional
         }
-
+        // Button Excluir
         private void button3_Click(object sender, EventArgs e)
         {
-
+            // Excluir Profissional
         }
     }
 }

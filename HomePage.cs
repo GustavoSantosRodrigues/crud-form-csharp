@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Agenda.DAO;
 using Agenda.Enum;
-// using Agenda.DAO;
-// using Agenda.Entity;
-// using Agenda.Enum;
 
 namespace Agenda
 {
@@ -21,13 +18,19 @@ namespace Agenda
         {
             InitializeComponent();
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
@@ -73,15 +76,16 @@ namespace Agenda
         {
             RedirectInserirAgenda(Profissao.VISAGISTA);
         }
-
+        // Consultar Profissionais
         private void button8_Click(object sender, EventArgs e)
         {
-
+            ConsultarProfissionais consultarProfissionais = new ConsultarProfissionais();
+            consultarProfissionais.Show();
         }
+        // Consultar Agenda
         private void button9_Click(object sender, EventArgs e)
         {
             ConsultarAgenda consultarAgenda = new ConsultarAgenda();
-            
             consultarAgenda.Show();
         }
     }

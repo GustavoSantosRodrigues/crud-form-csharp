@@ -44,9 +44,9 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(906, 144);
+            this.panel2.Location = new System.Drawing.Point(920, 160);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 440);
+            this.panel2.Size = new System.Drawing.Size(250, 490);
             this.panel2.TabIndex = 9;
             // 
             // button3
@@ -62,18 +62,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(86, 16);
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Magenta;
+            this.label2.Location = new System.Drawing.Point(31, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(190, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Outras ações";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Yellow;
+            this.button1.BackColor = System.Drawing.Color.Thistle;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(67, 65);
+            this.button1.Location = new System.Drawing.Point(73, 76);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 41);
@@ -87,7 +89,7 @@
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(67, 139);
+            this.button2.Location = new System.Drawing.Point(73, 144);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 41);
@@ -99,17 +101,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(361, 101);
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(165, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 13);
+            this.label1.Size = new System.Drawing.Size(562, 46);
             this.label1.TabIndex = 8;
             this.label1.Text = "Agendamentos Registrados";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(76, 144);
+            this.panel1.Location = new System.Drawing.Point(70, 160);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 440);
+            this.panel1.Size = new System.Drawing.Size(780, 490);
             this.panel1.TabIndex = 7;
             // 
             // ConsultarProfissionais
