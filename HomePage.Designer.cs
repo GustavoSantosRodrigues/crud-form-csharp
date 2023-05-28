@@ -108,7 +108,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label7.Location = new System.Drawing.Point(548, 651);
+            this.label7.Location = new System.Drawing.Point(545, 641);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 30);
             this.label7.TabIndex = 11;
@@ -118,7 +118,7 @@
             // 
             this.button6.BackgroundImage = global::Agenda.Properties.Resources.visagismo;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(882, 422);
+            this.button6.Location = new System.Drawing.Point(879, 412);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(217, 209);
             this.button6.TabIndex = 12;
@@ -129,7 +129,7 @@
             // 
             this.button5.BackgroundImage = global::Agenda.Properties.Resources.unhas;
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(555, 419);
+            this.button5.Location = new System.Drawing.Point(552, 409);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(203, 209);
             this.button5.TabIndex = 10;
@@ -140,7 +140,7 @@
             // 
             this.button4.BackgroundImage = global::Agenda.Properties.Resources.designer_de_sobrancelha;
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(248, 413);
+            this.button4.Location = new System.Drawing.Point(245, 403);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(207, 215);
             this.button4.TabIndex = 8;
@@ -186,7 +186,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label8.Location = new System.Drawing.Point(875, 654);
+            this.label8.Location = new System.Drawing.Point(872, 644);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 30);
             this.label8.TabIndex = 13;
@@ -197,7 +197,7 @@
             this.button8.BackColor = System.Drawing.Color.Violet;
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(784, 723);
+            this.button8.Location = new System.Drawing.Point(-76, 479);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(315, 45);
             this.button8.TabIndex = 15;
@@ -211,7 +211,7 @@
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(250, 731);
+            this.button9.Location = new System.Drawing.Point(-13, 370);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(252, 45);
             this.button9.TabIndex = 16;
@@ -223,7 +223,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label6.Location = new System.Drawing.Point(243, 640);
+            this.label6.Location = new System.Drawing.Point(240, 630);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(199, 73);
             this.label6.TabIndex = 11;
@@ -234,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1379, 795);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label8);
@@ -251,7 +251,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "HomePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();

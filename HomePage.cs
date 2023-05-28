@@ -37,8 +37,10 @@ namespace Agenda
             List<Profissional> profissionais = profissionalDAO.buscarPorProfissaoId((int)profissao);
 
             this.Hide();
-            InserirAgenda inserirAgenda = new InserirAgenda(profissionais);
 
+            InserirAgenda inserirAgenda = new InserirAgenda(profissionais);
+            inserirAgenda.ReferenceHomePage = this;
+            
             inserirAgenda.Show();
         }
         // Cabelos
@@ -79,6 +81,7 @@ namespace Agenda
         private void button9_Click(object sender, EventArgs e)
         {
             ConsultarAgenda consultarAgenda = new ConsultarAgenda();
+            
             consultarAgenda.Show();
         }
     }

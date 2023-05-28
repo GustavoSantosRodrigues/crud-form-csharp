@@ -18,6 +18,7 @@ namespace Agenda
     public partial class InserirAgenda : Form
     {
         private List<Profissional> profissionais;
+        public Form ReferenceHomePage { get; set; }
         public InserirAgenda()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace Agenda
             dateTimePicker1.MinDate = DateTime.Today.AddDays(1);
             dateTimePicker1.MaxDate = new DateTime(2023, 12, 31);
 
-            comboBox2.Items.AddRange(Utils.Utils.GetArrayHorarios());
+            comboBox2.Items.AddRange(Utils.Getters.GetArrayHorarios());
         }
         private string RemoverEspacos(string texto)
         {
@@ -182,9 +183,8 @@ namespace Agenda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            HomePage home = new HomePage();
-            home.Show();
+            this.Close();
+            ReferenceHomePage.Show();
         }
     }
 }

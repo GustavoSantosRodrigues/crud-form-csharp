@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Agenda.Utils
 {
-    public class Utils
+    public class Getters
     {
         public static string[] GetArrayHorarios()
         {
@@ -26,6 +28,26 @@ namespace Agenda.Utils
             };
 
             return horarios;
+        }
+
+        public static Label GetLabel(String titulo, Boolean isCabecalho)
+        {
+            Font fonte;
+            if (isCabecalho)
+            {
+                fonte = new Font("Arial", 12, FontStyle.Bold);
+            }
+            else
+            {
+                fonte = new Font("Arial", 12);
+            }
+
+            return new Label()
+            {
+                Text = $"{titulo}",
+                Font = fonte,
+                TextAlign = ContentAlignment.MiddleCenter
+            };
         }
     }
 }
