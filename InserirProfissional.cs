@@ -26,9 +26,12 @@ namespace Agenda
             string horarioSelecionado = null;
             string dataSelecionada = null;
             string profissao = comboBox1.SelectedItem?.ToString();
+            int idHorario = 0;
+            int idDias = 0;
 
             foreach (Control control in panel2.Controls)
             {
+                idHorario++;
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
                     horarioSelecionado = radioButton.Text;
@@ -37,6 +40,7 @@ namespace Agenda
             }
             foreach (Control control in panel3.Controls)
             {
+                idDias++;
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
                     dataSelecionada = radioButton.Text;
@@ -78,12 +82,13 @@ namespace Agenda
 
             profissional = new Profissional(
                 nome, 
-                (Enum.Profissao) System.Enum.ToObject(typeof(Enum.Profissao), 1),
-                (Enum.HorarioTrabalho) System.Enum.ToObject(typeof(Enum.HorarioTrabalho), 1),
-                (Enum.DiasTrabalho) System.Enum.ToObject(typeof(Enum.DiasTrabalho), 1)
+                (Enum.Profissao) System.Enum.ToObject(typeof(Enum.Profissao), idProfissao),
+                (Enum.HorarioTrabalho) System.Enum.ToObject(typeof(Enum.HorarioTrabalho), idHorario),
+                (Enum.DiasTrabalho) System.Enum.ToObject(typeof(Enum.DiasTrabalho), idDias)
                 );
 
             Boolean isSalvo = profissionalDAO.Salvar(profissional);
+
             if (isSalvo)
             {
                 //redirect

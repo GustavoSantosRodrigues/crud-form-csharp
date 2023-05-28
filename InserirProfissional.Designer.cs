@@ -60,7 +60,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(500, 40);
             this.label6.TabIndex = 51;
-            this.label6.Text = "Formulário de Agendamento";
+            this.label6.Text = "Formulário de Profissional";
             // 
             // panel1
             // 
