@@ -14,119 +14,232 @@ namespace Agenda.DAO
     {
         public Boolean Alterar(Entidade entidade)
         {
-            throw new NotImplementedException();
+            Profissional profissional = (Profissional) entidade;
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = $@"UPDATE profissionais SET 
+                                    nome = {profissional.Nome}, id_horario_trabalho = {(int)profissional.Horario}, 
+                                    id_dias_trabalho = {(int)profissional.Dias}, id_profissao = {(int)profissional.Profissao} 
+                                    WHERE id{profissional.Id}";
+                    
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao atualizar os dados: " + ex.Message);
+                    return false;
+                }
+            }
         }
 
         public Entidade BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = $"SELECT * FROM profissional WHERE id = '{id}';";
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        using (NpgsqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Profissional profissional = BuildProfissional(reader);
+                                return profissional;
+
+                            }
+                            return null;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao conectar ao banco de dados: " + ex.Message);
+                    return null;
+                }
+            }
         }
 
         public List<Entidade> BuscarTodos()
         {
-            NpgsqlConnection connection = DatabaseConnection.GetConnection();
-
-            try
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
             {
-                connection.Open();
-
-                // Realiza uma consulta ao banco de dados
-                string query = "SELECT * FROM profissional";
-                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                try
                 {
-                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    connection.Open();
+
+                    string query = "SELECT * FROM profissional";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                     {
-                        List<Entidade> profissionais = new List<Entidade>();
-                        while (reader.Read())
+                        using (NpgsqlDataReader reader = command.ExecuteReader())
                         {
-                            // Processa os resultados da consulta
-                            int id = reader.GetInt32(0);
-                            string nome = reader.GetString(1);
-                            int idHorario = reader.GetInt32(3);
-                            int idData = reader.GetInt32(4);
+                            List<Entidade> profissionais = new List<Entidade>();
+                            while (reader.Read())
+                            {
+                                Profissional profissional = BuildProfissional(reader);
+                                profissionais.Add(profissional);
+                            }
 
-                            Profissional profissional = new Profissional();
-
-                            profissional.Id = id;
-                            profissional.Nome = nome;
-                            
-                            profissionais.Add(profissional);
-
-                            Console.WriteLine($"ID: {id}, Nome: {nome}");
+                            return profissionais;
                         }
-
-                        return profissionais;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro ao conectar ao banco de dados: " + ex.Message);
-                throw new NotImplementedException();
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao conectar ao banco de dados: " + ex.Message);
+                    return null;
+                }
             }
         }
 
         public void Excluir(int id)
         {
-            throw new NotImplementedException();
-        }
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
 
+                    string query = $"DELETE FROM profissional WHERE {id}";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao excluir os dados: " + ex.Message);
+                }
+            }
+        }
+    
         public Boolean Salvar(Entidade entidade)
         {
+            Profissional profissional = (Profissional)entidade;
 
-            
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
 
-            throw new NotImplementedException();
+                    string query = $@"INSERT INTO profissional 
+                                    (nome, id_horario_trabalho, id_dias_trabalho, id_profissao)
+                                    VALUES ('{profissional.Nome}',{(int) profissional.Horario},
+                                        {(int) profissional.Dias},{(int) profissional.Profissao})";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao salvar os dados: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        private Profissional BuildProfissional(NpgsqlDataReader reader)
+        {
+            int id = reader.GetInt32(0);
+            string nome = reader.GetString(1);
+            int idHorario = reader.GetInt32(2);
+            int idDias = reader.GetInt32(3);
+            int idProfissao = reader.GetInt32(4);
+
+            Profissional profissional = new Profissional(
+                id, 
+                nome,
+                (Enum.Profissao)System.Enum.ToObject(typeof(Enum.Profissao), idProfissao),
+                (Enum.HorarioTrabalho)System.Enum.ToObject(typeof(Enum.HorarioTrabalho), idHorario),
+                (Enum.DiasTrabalho)System.Enum.ToObject(typeof(Enum.DiasTrabalho), idDias)
+            );
+
+            return profissional;
         }
 
         public List<Profissional> buscarPorProfissaoId(int profissaoId)
         {
-            NpgsqlConnection connection = DatabaseConnection.GetConnection();
-
-            try
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
             {
-                connection.Open();
-
-                string query = $"SELECT * FROM profissional where id_profissao = {profissaoId};";
-                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                try
                 {
-                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    connection.Open();
+
+                    string query = $"SELECT * FROM profissional where id_profissao = {profissaoId};";
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                     {
-                        List<Profissional> profissionais = new List<Profissional>();
-                        while (reader.Read())
+                        using (NpgsqlDataReader reader = command.ExecuteReader())
                         {
-                            int id = reader.GetInt32(0);
-                            string nome = reader.GetString(1);
-                            int idHorario = reader.GetInt32(3);
-                            int idData = reader.GetInt32(4);
+                            List<Profissional> profissionais = new List<Profissional>();
+                            while (reader.Read())
+                            {
+                                Profissional profissional = BuildProfissional(reader);
 
-                            Profissional profissional = new Profissional();
+                                profissionais.Add(profissional);
 
-                            profissional.Id = id;
-                            profissional.Nome = nome;
+                            }
 
-                            profissionais.Add(profissional);
-
-                            MessageBox.Show($"ID: {id}, Nome: {nome}");
+                            return profissionais;
                         }
-
-                        return profissionais;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro ao conectar ao banco de dados: " + ex.Message);
-                throw new NotImplementedException();
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao conectar ao banco de dados: " + ex.Message);
+                    throw new NotImplementedException();
+                }
             }
         }
 
         internal Profissional BuscarPorNomeEProfissao(string nome, int idProfissao)
         {
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
 
-            // select * from profissional where nome like '%{nome}' and id_profissao = {idProfissao}
+                    string query = $"SELECT * FROM profissional WHERE nome = '{nome}' and id_profissao = {idProfissao};";
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        using (NpgsqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Profissional profissional = BuildProfissional(reader);
+                                return profissional;
 
-            throw new NotImplementedException();
+                            }
+                            return null;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao conectar ao banco de dados: " + ex.Message);
+                    return null;
+                }
+            }
         }
     }
 }

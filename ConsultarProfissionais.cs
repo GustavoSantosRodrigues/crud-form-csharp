@@ -16,64 +16,112 @@ namespace Agenda
 {
     public partial class ConsultarProfissionais : Form
     {
+        public Form ReferenceHomePage { get; set; }
         public ConsultarProfissionais()
         {
             InitializeComponent();
-
             ConstruirTabela();
         }
+
         private void ConstruirTabela()
         {
             ProfissionalDAO profissionalDAO = new ProfissionalDAO();
             List<Entidade> profissionais = profissionalDAO.BuscarTodos();
 
             panel1.Controls.Clear();
+                
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.AllowUserToAddRows = false;
 
-            TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.ColumnCount = 5;
-            tableLayoutPanel1.AutoScroll = true;
+            // Configurar as colunas
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Id",
+                HeaderText = "Id",
+                DataPropertyName = "Id",
+                Width = 50
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Nome",
+                HeaderText = "Nome",
+                DataPropertyName = "Nome",
+                Width = 100
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Profissao",
+                HeaderText = "Profissão",
+                DataPropertyName = "Profissao",
+                Width = 150
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "DiasAtendimento",
+                HeaderText = "Dias de Atendimento",
+                DataPropertyName = "DiasAtendimento",
+                Width = 220
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "HorariosAtendimento",
+                HeaderText = "Horários de Atendimento",
+                DataPropertyName = "HorariosAtendimento",
+                Width = 215
+            });
 
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
 
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Id", true), 0, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Nome", true), 1, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Profissao", true), 2, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Dias de Atendimento", true), 3, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Horários de Atendimento", true), 4, 0);
-
+            // Adicionar os dados
             foreach (var entidade in profissionais)
             {
-                int line = profissionais.IndexOf(entidade) + 1;
-
                 Profissional profissional = (Profissional)entidade;
 
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(profissional.Id.ToString(), false), 0, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(profissional.Nome, false), 1, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(profissional.Profissao.OptionString(), false), 2, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(profissional.Dias.OptionString(), false), 0, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(profissional.Horario.OptionString(), false), 1, line);
+                dataGridView1.Rows.Add(
+                    profissional.Id,
+                    profissional.Nome,
+                    profissional.Profissao.OptionString(),
+                    profissional.Dias.OptionString(),
+                    profissional.Horario.OptionString()
+                );
             }
 
-            panel1.Controls.Add(tableLayoutPanel1);
+            panel1.Controls.Add(dataGridView1);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            InserirProfissional inserirProfissional = new InserirProfissional();
+            inserirProfissional.ReferenciaConsultarProfissional = this;
+            inserirProfissional.ReferenceHomePage = ReferenceHomePage;
+
+            this.Hide();
+            inserirProfissional.Show();
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            AlterarProfissional alterarProfissional = new AlterarProfissional();
+            alterarProfissional.ReferenciaConsultarProfissional = this;
+            
+            this.Hide();
+            alterarProfissional.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ReferenceHomePage.Show();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

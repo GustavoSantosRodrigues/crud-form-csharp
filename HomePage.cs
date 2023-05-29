@@ -39,12 +39,11 @@ namespace Agenda
             ProfissionalDAO profissionalDAO = new ProfissionalDAO();
             List<Profissional> profissionais = profissionalDAO.buscarPorProfissaoId((int)profissao);
 
-            this.Hide();
-
-            InserirAgendamento inserirAgenda = new InserirAgendamento(profissionais);
-            inserirAgenda.ReferenceHomePage = this;
+            InserirAgendamento inserirAgendamento = new InserirAgendamento(profissionais);
+            inserirAgendamento.ReferenceHomePage = this;
             
-            inserirAgenda.Show();
+            this.Hide();
+            inserirAgendamento.Show();
         }
         // Cabelos
         private void button1_Click(object sender, EventArgs e)
@@ -79,17 +78,20 @@ namespace Agenda
         // Consultar Profissionais
         private void button8_Click(object sender, EventArgs e)
         {
-
-            InserirProfissional profissional = new InserirProfissional();   
-            profissional.Show();
-           // ConsultarProfissionais consultarProfissionais = new ConsultarProfissionais();
-            //consultarProfissionais.Show();
+            ConsultarProfissionais consultarProfissionais = new ConsultarProfissionais();
+            consultarProfissionais.ReferenceHomePage = this;
+            
+            this.Hide();
+            consultarProfissionais.Show();
         }
         // Consultar Agenda
         private void button9_Click(object sender, EventArgs e)
         {
-            ConsultarAgendamentos consultarAgenda = new ConsultarAgendamentos();
-            consultarAgenda.Show();
+            ConsultarAgendamentos consultarAgendamentos = new ConsultarAgendamentos();
+            consultarAgendamentos.ReferenceHomePage = this;
+
+            this.Hide();
+            consultarAgendamentos.Show();
         }
     }
 }

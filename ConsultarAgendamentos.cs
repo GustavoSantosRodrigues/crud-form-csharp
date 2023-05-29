@@ -16,6 +16,7 @@ namespace Agenda
 {
     public partial class ConsultarAgendamentos : Form
     {
+        public Form ReferenceHomePage { get; set; }
         public ConsultarAgendamentos()
         {
             InitializeComponent();
@@ -26,51 +27,77 @@ namespace Agenda
         {
             AgendamentoDAO agendamentoDAO = new AgendamentoDAO();
             List<Entidade> agendamentos = agendamentoDAO.BuscarTodos();
-
             panel1.Controls.Clear();
 
-            TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.AutoScroll = true;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.AutoGenerateColumns = false;
 
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15));
-
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Id", true), 0, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Cliente", true), 1, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Telefone", true), 2, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Profissional", true), 3, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Data", true), 4, 0);
-            tableLayoutPanel1.Controls.Add(Getters.GetLabel("Hora", true), 5, 0);
-
-            foreach(var entidade in agendamentos)
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
             {
-                int line = agendamentos.IndexOf(entidade) +1;
+                Name = "Id",
+                HeaderText = "Id",
+                DataPropertyName = "Id",
+                Width = 50
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Cliente",
+                HeaderText = "Cliente",
+                DataPropertyName = "Cliente",
+                Width = 100
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Telefone",
+                HeaderText = "Telefone",
+                DataPropertyName = "Telefone",
+                Width = 100
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Profissional",
+                HeaderText = "Profissional",
+                DataPropertyName = "Profissional",
+                Width = 100
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Data",
+                HeaderText = "Data",
+                DataPropertyName = "Data",
+                Width = 100
+            });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Hora",
+                HeaderText = "Hora",
+                DataPropertyName = "Hora",
+                Width = 100
+            });
 
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+
+            // Limpar as linhas existentes
+            dataGridView1.Rows.Clear();
+
+            foreach (var entidade in agendamentos)
+            {
                 Agendamento agendamento = (Agendamento)entidade;
 
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(agendamento.Id.ToString(), false), 0, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(agendamento.Cliente.Nome, false), 1, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(agendamento.Cliente.Telefone, false), 2, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(agendamento.Profissional.Nome, false), 0, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(agendamento.Data.ToString(), false), 1, line);
-                tableLayoutPanel1.Controls.Add(Getters.GetLabel(agendamento.Hora, false), 2, line);
+                dataGridView1.Rows.Add(
+                    agendamento.Id,
+                    agendamento.Cliente.Nome,
+                    agendamento.Cliente.Telefone,
+                    agendamento.Profissional.Nome,
+                    agendamento.Data.ToString(),
+                    agendamento.Hora
+                );
             }
 
-            panel1.Controls.Add(tableLayoutPanel1);
+            panel1.Controls.Add(dataGridView1);
         }
 
         private void ConsultarAgenda_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
 
         }
@@ -83,6 +110,12 @@ namespace Agenda
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ReferenceHomePage.Show();
         }
     }
 }

@@ -12,45 +12,53 @@ namespace Agenda.Enum
         {
             if (Profissao.CABELEREIRO == profissao)
             {
-                return "Option 1";
+                return "Cabelereiro";
+            }
+            else if (Profissao.MAQUIADOR == profissao)
+            {
+                return "Maquiador";
+            }
+            else if (Profissao.MANICURE == profissao)
+            {
+                return "Manicure";
             }
             else if (Profissao.DESIGNER_SOMBRANCELHA == profissao)
             {
-                return "Option 2";
+                return "Designer de Sombrancelha";
             }
             else
             {
-                return "Option 3";
+                return "Visagista";
             }
         }
         public static string OptionString(this HorarioTrabalho horario)
         {
             if(HorarioTrabalho.INICIO_08 == horario)
             {
-                return "Option 1";
+                return "08:00 às 17:00";
             }
             else if(HorarioTrabalho.INICIO_09 == horario)
             {
-                return "Option 2";
+                return "09:00 às 18:00";
             }
             else
             {
-                return "Option 3";
+                return "10:00 às 19:00";
             }
         }
         public static string OptionString(this DiasTrabalho dias)
         {
             if (DiasTrabalho.SEG_SEX == dias)
             {
-                return "Option 1";
+                return "Segunda à Sexta";
             }
             else if (DiasTrabalho.SAB_DOM == dias)
             {
-                return "Option 2";
+                return "Sabado e Domingo";
             }
             else
             {
-                return "Option 3";
+                return "Todos os dias";
             }
         }
     }

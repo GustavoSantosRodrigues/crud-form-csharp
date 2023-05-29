@@ -30,12 +30,19 @@ namespace Agenda
             
             this.profissionais = profissionais;
 
+            if(profissionais.Count == 0 )
+            {
+                MessageBox.Show("Não há profissionais para o serviço selecionado.");
+                ReferenceHomePage.Show();
+                this.Close();
+            }
+
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
 
             foreach (var profissional in profissionais)
             {
-                comboBox1.Items.Insert(profissionais.IndexOf(profissional), profissional.Nome);
+                comboBox1.Items.Add(profissional.Nome);
             }
 
             dateTimePicker1.MinDate = DateTime.Today.AddDays(1);
@@ -56,8 +63,6 @@ namespace Agenda
 
             DateTime data = dateTimePicker1.Value;
             string hora = comboBox2.SelectedItem?.ToString();
-
-            MessageBox.Show(nomeCliente+telefone+nomeProfissional+data+hora);
 
             if (String.IsNullOrEmpty(nomeCliente))
             {
@@ -151,12 +156,20 @@ namespace Agenda
 
             AgendamentoDAO agendamentoDao = new AgendamentoDAO();
             
+            // buscarPorProfissionalDataEHora
+
+
             Boolean isSalvo = agendamentoDao.Salvar(agendamento);
 
             if (isSalvo)
             {
                 MessageBox.Show("Agendamento salvo com sucesso.");
-                //redirect
+
+                ConsultarAgendamentos consultarAgendamentos = new ConsultarAgendamentos();
+                consultarAgendamentos.ReferenceHomePage = ReferenceHomePage;
+                
+                this.Close();
+                consultarAgendamentos.Show();
             }
             else
             {

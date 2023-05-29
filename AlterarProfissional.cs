@@ -16,6 +16,7 @@ namespace Agenda
     public partial class AlterarProfissional : Form
     {
         private Profissional profissional = null;
+        public Form ReferenciaConsultarProfissional { get; set; }
         public AlterarProfissional()
         {
             InitializeComponent();
@@ -61,7 +62,8 @@ namespace Agenda
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Canlear
+            this.Close();
+            ReferenciaConsultarProfissional.Show();
         }
     }
 }

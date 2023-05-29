@@ -109,7 +109,7 @@
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(280, 30);
-            this.comboBox1.TabIndex = 6;
+            this.comboBox1.TabIndex = 4;
             this.comboBox1.Text = " Selecione um profissional...";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -132,7 +132,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 45);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -143,7 +143,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(40, 250);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(470, 32);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // maskedTextBox1
             // 
@@ -152,7 +152,7 @@
             this.maskedTextBox1.Mask = "(00) 00000-0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(190, 32);
-            this.maskedTextBox1.TabIndex = 16;
+            this.maskedTextBox1.TabIndex = 3;
             this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -188,7 +188,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 45);
-            this.button2.TabIndex = 17;
+            this.button2.TabIndex = 7;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);

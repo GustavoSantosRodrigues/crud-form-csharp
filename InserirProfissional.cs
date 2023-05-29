@@ -10,14 +10,21 @@ using System.Windows.Forms;
 using Agenda.DAO;
 using Agenda.Utils;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using Agenda.Enum;
 namespace Agenda
 {
     public partial class InserirProfissional : Form
     {
+        public Form ReferenciaConsultarProfissional { get; set; }
+        public Form ReferenceHomePage { get; set; }
+
         public InserirProfissional()
         {
             InitializeComponent();
+
+            
+            comboBox1.Items.AddRange(Getters.GetProfissoes());
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -76,7 +83,7 @@ namespace Agenda
 
             if(profissional != null)
             {
-                MessageBox.Show("Já há um profissional dessa área registrado com este nome.");
+                MessageBox.Show("Já há um profissional desta área registrado com este nome.");
                 return;
             }
 
@@ -91,18 +98,22 @@ namespace Agenda
 
             if (isSalvo)
             {
-                //redirect
+                ReferenciaConsultarProfissional.Close();
+                this.Close();
+                
+                ReferenceHomePage.Show();
+                MessageBox.Show("Profissional cadastrado com sucesso!");
             }
             else
             {
-                //message box
+                MessageBox.Show("Erro ao se connectar com o banco. Não foi possível salvar o agendamento.");
             }
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            ReferenciaConsultarProfissional.Show();
         }
     }
 }
