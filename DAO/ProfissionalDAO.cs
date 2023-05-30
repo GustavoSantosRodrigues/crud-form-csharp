@@ -21,11 +21,13 @@ namespace Agenda.DAO
                 {
                     connection.Open();
 
-                    string query = $@"UPDATE profissionais SET 
-                                    nome = {profissional.Nome}, id_horario_trabalho = {(int)profissional.Horario}, 
+                    string query = $@"UPDATE profissional SET 
+                                    nome = '{profissional.Nome}', id_horario_trabalho = {(int)profissional.Horario}, 
                                     id_dias_trabalho = {(int)profissional.Dias}, id_profissao = {(int)profissional.Profissao} 
-                                    WHERE id{profissional.Id}";
-                    
+                                    WHERE id = {profissional.Id};";
+
+                    MessageBox.Show(query);
+
                     using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                     {
                         command.ExecuteNonQuery();
@@ -224,12 +226,12 @@ namespace Agenda.DAO
                     {
                         using (NpgsqlDataReader reader = command.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (reader.Read())
                             {
                                 Profissional profissional = BuildProfissional(reader);
                                 return profissional;
-
                             }
+
                             return null;
                         }
                     }

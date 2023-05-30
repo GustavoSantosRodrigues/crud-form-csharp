@@ -21,10 +21,8 @@ namespace Agenda
         public InserirProfissional()
         {
             InitializeComponent();
-
-            
+                        
             comboBox1.Items.AddRange(Getters.GetProfissoes());
-            
         }
 
         private void button2_Click(object sender, EventArgs e)

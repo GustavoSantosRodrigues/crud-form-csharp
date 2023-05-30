@@ -105,7 +105,8 @@ namespace Agenda
         {
             AlterarProfissional alterarProfissional = new AlterarProfissional();
             alterarProfissional.ReferenciaConsultarProfissional = this;
-            
+            alterarProfissional.ReferenceHomePage = ReferenceHomePage;
+
             this.Hide();
             alterarProfissional.Show();
         }
