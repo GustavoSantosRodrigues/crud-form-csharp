@@ -211,7 +211,7 @@ namespace Agenda.DAO
             }
         }
 
-        internal Profissional BuscarPorNomeEProfissao(string nome, int idProfissao)
+        public Profissional BuscarPorNomeEProfissao(string nome, int idProfissao)
         {
             using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
             {

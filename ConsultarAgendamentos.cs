@@ -89,7 +89,7 @@ namespace Agenda
                     agendamento.Cliente.Nome,
                     agendamento.Cliente.Telefone,
                     agendamento.Profissional.Nome,
-                    agendamento.Data.ToString(),
+                    agendamento.Data.ToString().Substring(0, 10),
                     agendamento.Hora
                 );
             }
@@ -97,14 +97,14 @@ namespace Agenda
             panel1.Controls.Add(dataGridView1);
         }
 
-        private void ConsultarAgenda_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
+            AlterarAgendamento alterarAgendamento = new AlterarAgendamento();
+            alterarAgendamento.ReferenceHomePage = ReferenceHomePage;
+            alterarAgendamento.ReferenceConsultarAgendamento = this;
 
+            this.Hide();
+            alterarAgendamento.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -116,6 +116,11 @@ namespace Agenda
         {
             this.Close();
             ReferenceHomePage.Show();
+        }
+
+        private void ConsultarAgenda_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

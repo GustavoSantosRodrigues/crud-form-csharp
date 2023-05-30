@@ -12,6 +12,8 @@ namespace Agenda
 {
     public partial class AlterarAgendamento : Form
     {
+        public Form ReferenceHomePage { get; set; }
+        public Form ReferenceConsultarAgendamento { get; set; }
         public AlterarAgendamento()
         {
             InitializeComponent();

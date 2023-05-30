@@ -18,7 +18,7 @@ namespace Agenda
 {
     public partial class InserirAgendamento : Form
     {
-        private List<Profissional> profissionais;
+        private List<Profissional> Profissionais { get; set; }
         public Form ReferenceHomePage { get; set; }
         public InserirAgendamento()
         {
@@ -28,7 +28,7 @@ namespace Agenda
         {
             InitializeComponent();
             
-            this.profissionais = profissionais;
+            Profissionais = profissionais;
 
             if(profissionais.Count == 0 )
             {
@@ -91,8 +91,9 @@ namespace Agenda
             }
             
             Profissional profissional = new Profissional();
+            hora = hora.Substring(0, 5);
 
-            foreach (var pf in profissionais)
+            foreach (var pf in Profissionais)
             {
                 if(pf.Nome == nomeProfissional)
                 {
@@ -150,12 +151,28 @@ namespace Agenda
                 }
             }
 
-            Cliente cliente = new Cliente(RemoverEspacos(nomeCliente), RemoverEspacos(telefone));
+            AgendamentoDAO agendamentoDao = new AgendamentoDAO();
+            List<Entidade> agendamentos = agendamentoDao.BuscarTodos();
 
+            foreach (var entidade in agendamentos)
+            {
+                Agendamento ag = (Agendamento)entidade;
+                if(ag.Profissional.Id == profissional.Id)
+                {
+                    if(ag.Data == data)
+                    {
+                        if(ag.Hora == hora)
+                        {
+                            MessageBox.Show("O profissional já tem um agendamento neste dia e horário. Troque por favor!");
+                            return;
+                        }
+                    }
+                }
+            }
+
+            Cliente cliente = new Cliente(RemoverEspacos(nomeCliente), RemoverEspacos(telefone));
             Agendamento agendamento = new Agendamento(cliente, profissional, data, hora);
 
-            AgendamentoDAO agendamentoDao = new AgendamentoDAO();
-            
             // buscarPorProfissionalDataEHora
 
 
@@ -164,12 +181,9 @@ namespace Agenda
             if (isSalvo)
             {
                 MessageBox.Show("Agendamento salvo com sucesso.");
-
-                ConsultarAgendamentos consultarAgendamentos = new ConsultarAgendamentos();
-                consultarAgendamentos.ReferenceHomePage = ReferenceHomePage;
                 
                 this.Close();
-                consultarAgendamentos.Show();
+                ReferenceHomePage.Show();
             }
             else
             {
