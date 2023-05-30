@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,6 +68,29 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(880, 100);
             this.panel4.TabIndex = 61;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(110, 50);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 32);
+            this.textBox1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(250, 50);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 35);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -128,7 +151,7 @@
             this.panel3.Location = new System.Drawing.Point(599, 75);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(240, 175);
-            this.panel3.TabIndex = 38;
+            this.panel3.TabIndex = 15;
             // 
             // radioButton5
             // 
@@ -137,7 +160,7 @@
             this.radioButton5.Location = new System.Drawing.Point(25, 125);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(149, 26);
-            this.radioButton5.TabIndex = 18;
+            this.radioButton5.TabIndex = 20;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "  Sab. e Dom.";
             this.radioButton5.UseVisualStyleBackColor = true;
@@ -175,7 +198,7 @@
             this.panel2.Location = new System.Drawing.Point(319, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(240, 175);
-            this.panel2.TabIndex = 38;
+            this.panel2.TabIndex = 9;
             // 
             // radioButton2
             // 
@@ -184,7 +207,7 @@
             this.radioButton2.Location = new System.Drawing.Point(25, 75);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(169, 26);
-            this.radioButton2.TabIndex = 42;
+            this.radioButton2.TabIndex = 12;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "  09:00 às 18:00";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -196,7 +219,7 @@
             this.radioButton1.Location = new System.Drawing.Point(25, 25);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(169, 26);
-            this.radioButton1.TabIndex = 41;
+            this.radioButton1.TabIndex = 10;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "  08:00 às 17:00";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -208,7 +231,7 @@
             this.radioButton3.Location = new System.Drawing.Point(25, 125);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(169, 26);
-            this.radioButton3.TabIndex = 43;
+            this.radioButton3.TabIndex = 14;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "  10:00 às 19:00";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -221,7 +244,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 45);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 24;
             this.button2.Text = "Salvar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -246,7 +269,7 @@
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 45);
-            this.button3.TabIndex = 17;
+            this.button3.TabIndex = 22;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -269,7 +292,7 @@
             this.comboBox1.Location = new System.Drawing.Point(39, 215);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(240, 26);
-            this.comboBox1.TabIndex = 37;
+            this.comboBox1.TabIndex = 8;
             this.comboBox1.Text = " Selecione uma profissão...";
             // 
             // textBox3
@@ -280,7 +303,7 @@
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(240, 32);
-            this.textBox3.TabIndex = 2;
+            this.textBox3.TabIndex = 6;
             // 
             // label10
             // 
@@ -304,29 +327,6 @@
             this.label11.TabIndex = 5;
             this.label11.Text = "Dias de Atendimento";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(250, 50);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 35);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(110, 50);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 32);
-            this.textBox1.TabIndex = 4;
-            // 
             // AlterarProfissional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +335,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AlterarProfissional";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AlterarDadosProfissional";

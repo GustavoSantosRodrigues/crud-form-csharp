@@ -113,7 +113,12 @@ namespace Agenda
 
         private void button3_Click(object sender, EventArgs e)
         {
+            DeletarProfissional deletarProfissional = new DeletarProfissional();
+            deletarProfissional.ReferenciaConsultarProfissional = this;
+            deletarProfissional.ReferenceHomePage = ReferenceHomePage;
 
+            this.Hide();
+            deletarProfissional.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

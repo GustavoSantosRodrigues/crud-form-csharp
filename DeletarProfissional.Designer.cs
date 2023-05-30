@@ -76,7 +76,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 32);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 2;
             // 
             // button1
             // 
@@ -87,7 +87,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 35);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -151,7 +151,7 @@
             this.panel3.Location = new System.Drawing.Point(599, 75);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(240, 175);
-            this.panel3.TabIndex = 38;
+            this.panel3.TabIndex = 13;
             // 
             // radioButton5
             // 
@@ -172,7 +172,7 @@
             this.radioButton4.Location = new System.Drawing.Point(25, 25);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(141, 26);
-            this.radioButton4.TabIndex = 17;
+            this.radioButton4.TabIndex = 14;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "  Seg. à Sex.";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             this.radioButton6.Location = new System.Drawing.Point(25, 75);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(163, 26);
-            this.radioButton6.TabIndex = 19;
+            this.radioButton6.TabIndex = 16;
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "  Todos os dias";
             this.radioButton6.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@
             this.panel2.Location = new System.Drawing.Point(319, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(240, 175);
-            this.panel2.TabIndex = 38;
+            this.panel2.TabIndex = 9;
             // 
             // radioButton2
             // 
@@ -207,7 +207,7 @@
             this.radioButton2.Location = new System.Drawing.Point(25, 75);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(169, 26);
-            this.radioButton2.TabIndex = 42;
+            this.radioButton2.TabIndex = 11;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "  09:00 às 18:00";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@
             this.radioButton1.Location = new System.Drawing.Point(25, 25);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(169, 26);
-            this.radioButton1.TabIndex = 41;
+            this.radioButton1.TabIndex = 10;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "  08:00 às 17:00";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -231,7 +231,7 @@
             this.radioButton3.Location = new System.Drawing.Point(25, 125);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(169, 26);
-            this.radioButton3.TabIndex = 43;
+            this.radioButton3.TabIndex = 12;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "  10:00 às 19:00";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -244,7 +244,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 45);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 22;
             this.button2.Text = "Confirmar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -269,7 +269,7 @@
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 45);
-            this.button3.TabIndex = 17;
+            this.button3.TabIndex = 20;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -292,7 +292,7 @@
             this.comboBox1.Location = new System.Drawing.Point(39, 215);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(240, 26);
-            this.comboBox1.TabIndex = 37;
+            this.comboBox1.TabIndex = 8;
             this.comboBox1.Text = " Selecione uma profissão...";
             // 
             // textBox3
@@ -303,7 +303,7 @@
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(240, 32);
-            this.textBox3.TabIndex = 2;
+            this.textBox3.TabIndex = 6;
             // 
             // label10
             // 

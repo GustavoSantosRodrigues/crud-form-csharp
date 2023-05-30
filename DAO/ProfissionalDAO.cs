@@ -26,8 +26,6 @@ namespace Agenda.DAO
                                     id_dias_trabalho = {(int)profissional.Dias}, id_profissao = {(int)profissional.Profissao} 
                                     WHERE id = {profissional.Id};";
 
-                    MessageBox.Show(query);
-
                     using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                     {
                         command.ExecuteNonQuery();
@@ -115,7 +113,7 @@ namespace Agenda.DAO
                 {
                     connection.Open();
 
-                    string query = $"DELETE FROM profissional WHERE {id}";
+                    string query = $"DELETE FROM profissional WHERE id = {id}";
 
                     using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                     {
