@@ -173,9 +173,6 @@ namespace Agenda
             Cliente cliente = new Cliente(RemoverEspacos(nomeCliente), RemoverEspacos(telefone));
             Agendamento agendamento = new Agendamento(cliente, profissional, data, hora);
 
-            // buscarPorProfissionalDataEHora
-
-
             Boolean isSalvo = agendamentoDao.Salvar(agendamento);
 
             if (isSalvo)

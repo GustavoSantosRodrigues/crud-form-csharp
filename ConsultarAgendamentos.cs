@@ -44,7 +44,7 @@ namespace Agenda
                 Name = "Cliente",
                 HeaderText = "Cliente",
                 DataPropertyName = "Cliente",
-                Width = 100
+                Width = 150
             });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
             {
@@ -58,14 +58,14 @@ namespace Agenda
                 Name = "Profissional",
                 HeaderText = "Profissional",
                 DataPropertyName = "Profissional",
-                Width = 100
+                Width = 150
             });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
             {
                 Name = "Data",
                 HeaderText = "Data",
                 DataPropertyName = "Data",
-                Width = 100
+                Width = 175
             });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
             {
@@ -109,7 +109,12 @@ namespace Agenda
 
         private void button3_Click(object sender, EventArgs e)
         {
+            DeletarAgendamento deletarAgendamento = new DeletarAgendamento();
+            deletarAgendamento.ReferenceHomePage = ReferenceHomePage;
+            deletarAgendamento.ReferenceConsultarAgendamento = this;
 
+            this.Hide();
+            deletarAgendamento.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

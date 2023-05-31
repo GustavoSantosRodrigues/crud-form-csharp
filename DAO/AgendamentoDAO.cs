@@ -13,12 +13,62 @@ namespace Agenda.DAO
     {
         public Boolean Alterar(Entidade entidade)
         {
-            throw new NotImplementedException();
+            Agendamento agendamento = (Agendamento) entidade;
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = $@"UPDATE agendamento SET 
+                                    nome_cliente = '{agendamento.Cliente.Nome}', telefone_contato = '{agendamento.Cliente.Telefone}', 
+                                    id_profissional = {agendamento.Profissional.Id}, data = '{agendamento.Data}', hora = '{agendamento.Hora}'
+                                    WHERE id = {agendamento.Id};";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao atualizar os dados: " + ex.Message);
+                    return false;
+                }
+            }
         }
 
         public Entidade BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = $"SELECT * FROM agendamento WHERE id = '{id}';";
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        using (NpgsqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Agendamento agendamento = BuildAgendamento(reader);
+                                return agendamento;
+
+                            }
+                            return null;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao conectar ao banco de dados: " + ex.Message);
+                    return null;
+                }
+            }
         }
 
         public List<Entidade> BuscarTodos()
@@ -74,7 +124,25 @@ namespace Agenda.DAO
         }
         public void Excluir(int id)
         {
-            throw new NotImplementedException();
+            using (NpgsqlConnection connection = DatabaseConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = $"DELETE FROM agendamento WHERE id = {id}";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao excluir os dados: " + ex.Message);
+                }
+            }
         }
 
         public Boolean Salvar(Entidade entidade)
